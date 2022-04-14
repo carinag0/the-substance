@@ -30,7 +30,7 @@ function Paragraph({ image, index, offset, factor, header, aspect, text }) {
         <Dom
           style={{ width: pixelWidth / (mobile ? 1 : 2), textAlign: left ? "left" : "right" }}
           position={[left || mobile ? (-w * size) / 2 : 0, (-w * size) / 2 / aspect - 0.4, 1]}>
-          <div tabIndex={index}>{text}</div>
+          <div tabIndex={index} style={{marginTop: '2em'}}>{text}</div>
         </Dom>
         <Text left={left} right={!left} size={w * 0.04} color={color} top position={[((left ? -w : w) * size) / 2, (w * size) / aspect / 2 + 0.5, -1]}>
           {header}
@@ -56,16 +56,16 @@ function Content() {
     <>
       <Block factor={1} offset={0}>
         <Block factor={1.2}>
-          <Text left size={w * 0.08} position={[-w / 3.2, 0.5, -1]} color="#d40749">
-            MOKSHA
+          <Text left size={w * 0.08} position={[-w / 3.2, 0.5, -1]} color="#C888FF">
+            CARINA GENG
           </Text>
         </Block>
         <Block factor={1.0}>
-          <Dom position={[-w / 3.2, -w * 0.08 + 0.25, -1]}>It was the year 2076.{mobile ? <br /> : " "}The substance had arrived.</Dom>
+          <Dom position={[-w / 3.8, -w * 0.15 + 0.01, -5]}>#Interaction Designer{mobile ? <br /> : " "}#Accessibility</Dom>
         </Block>
       </Block>
       <Block factor={1.2} offset={5.7}>
-        <MultilineText top left size={w * 0.15} lineHeight={w / 5} position={[-w / 3.5, 0, -1]} color="#2fe8c3" text={"four\nzero\nzero"} />
+        <MultilineText top left size={w * 0.15} lineHeight={w / 5} position={[-w / 3.5, 0, -1]} color="#C888FF" text={"the\nend"} />
       </Block>
       {state.paragraphs.map((props, index) => (
         <Paragraph key={index} index={index} {...props} image={images[index]} />
@@ -77,7 +77,7 @@ function Content() {
       ))}
       <Block factor={1.25} offset={8}>
         <Dom className="bottom-left" position={[-canvasWidth / 2, -canvasHeight / 2, 0]}>
-          Culture is not your friend.
+          xxx.
         </Dom>
       </Block>
     </>
@@ -90,7 +90,7 @@ function App() {
   useEffect(() => void onScroll({ target: scrollArea.current }), [])
   return (
     <>
-      <Canvas className="canvas" concurrent pixelRatio={1} orthographic camera={{ zoom: state.zoom, position: [0, 0, 500] }}>
+      <Canvas className="canvas" concurrent pixelRatio={1} orthographiFc camera={{ zoom: state.zoom, position: [0, 0, 500] }}>
         <Suspense fallback={<Dom center className="loading" children="Loading..." />}>
           <Content />
           <Diamonds />
@@ -103,16 +103,16 @@ function App() {
         ))}
       </div>
       <div className="frame">
-        <h1 className="frame__title">Scroll, Refraction and Shader Effects</h1>
+        <h1 className="frame__title">Welcome to my portfolio</h1>
         <div className="frame__links">
-          <a className="frame__link" href="http://tympanus.net/Tutorials/PhysicsMenu/">
-            Previous demo
+          <a className="frame__link" href="https://carinageng.com/">
+            Works
           </a>
-          <a className="frame__link" href="https://tympanus.net/codrops/?p=45441">
-            Article
+          <a className="frame__link" href="https://carinageng.com/">
+            Me
           </a>
-          <a className="frame__link" href="https://github.com/drcmda/the-substance">
-            GitHub
+          <a className="frame__link" href="https://carinageng.com/">
+            Resume
           </a>
         </div>
         <div className="frame__nav">
@@ -122,7 +122,7 @@ function App() {
           <a className="frame__link" href="#03" children="03" />
           <a className="frame__link" href="#04" children="04" />
           <a className="frame__link" href="#05" children="05" />
-          <a className="frame__link" href="#07" children="06" />
+
         </div>
       </div>
     </>
